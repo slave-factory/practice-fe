@@ -1,6 +1,6 @@
 import React from "react";
 
-function businesscard(props) {         /*함수형 컴포넌트*/
+function Businesscard(props) {         /*함수형 컴포넌트*/
     return(
         <div>
             <h3>나만의 명함 만들기</h3>
