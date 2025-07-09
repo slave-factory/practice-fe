@@ -9,27 +9,30 @@ div {
   box-sizing: border-box;
 }
 
-.탭버튼 {
-  margin-right: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  background-color: #eee;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.탭버튼.활성 {
-  background-color: #007bff;
-  color: white;
-}
-
-.탭내용박스 {
+.갤러리전체 {
+  text-align: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-height: 80px;
+}
+
+.썸네일목록 {
+  margin-top: 20px;
+}
+
+.확대이미지 img {            /* className img : className이 '확대이미지'인 요소 안에 있는 img 태그에만 이를 적용하라는 것 */
+  width: 400px;
+  border-radius: 10px;
+}
+
+.썸네일 {
+  width: 100px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.썸네일:hover {          /* .썸네일:hover : class=썸네일 인 요소에 마우스를 올렸을 때 나타나는 스타일 */
+  border-color: #666;      /* 기본 상태에는 border가 (2px solid transparent)투명했다가 마우스를 올리면 color가 (#666)회색으로 바뀜*/
 }
 
 .list {

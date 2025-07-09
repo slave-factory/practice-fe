@@ -3,26 +3,31 @@ import './App.css';
 
 
 function App() {
+  // 하나의 객체에 url, 제목, 설명 세 걔의 정보를 세 개의 딕셔너리로 넣음.
+  const 이미지목록 = [
+    {url: "https://kisdi-megatrend.com/2024/data/file/allsession/9b54daef37a49b1886e0121f7691d5cd_lvJwFndV_7cfb783d4a6b19afd0406878f5de3efe4cec38be.jpg", 제목: "남우정", 설명: "80 100인 나에게 비쁠을 줌"},
+    {url: "https://cse.knu.ac.kr/data/file/sub2_2/thumb-6db859d91a4e6fcd421a1f27612bb49b_Fs96CkOq_2e13f126fc8874588fa77d7d147839d862190758_150x202.png", 제목: "배진학", 설명: "생각보다 성적 주는 게 깐깐하심"},
+    {url: "https://cse.knu.ac.kr/data/file/sub2_3/thumb-9ace6fb70e9fd976b38a43b82b28cda8_9CLg1lXm_8b4f4894bd238ef395d0dc54e900ec8abba653d8_150x200.jpg", 제목: "안병준", 설명: "대 밴저민 대 브라이언"},
+    {url: "https://cse.knu.ac.kr/data/file/sub2_2/thumb-9ace6fb70e9fd976b38a43b82b28cda8_DzkebjKd_0b6923d9376511883a2ea47c285eb0b2854bb28c_150x202.jpg", 제목: "이성희", 설명: "계절수1열심히들을게요제발에이쁠주세요계절수1열심히들을게요제발에이쁠주세요"}
+  ]
 
-  const [클릭된탭, 클릭된탭변경] = useState(3)    // active 상태(현재 무슨 탭이 선택되어 있는지)를 관리할 상태값을 '클릭된탭'이라는 state로 지정.
-  
-  const 클릭시표시할내용 = ["첫 번째 탭 내용", "두 번째 탭 내용", "세 번째 탭 내용"]
+  const [선택된이미지, 선택된이미지변경] = useState(0)
   
   return(
-    <div>
+    <div className="갤러리전체">
+      <h2>이미지 갤러리</h2>
 
-      <div>         {/* 버튼 만들기. map으로 3개를 한꺼번에 생성 */}
-        {[0, 1, 2].map((e) => (      // 0, 1, 2는 각 탭에 해당하는 active 상태를 표시하기 위한 상태값.
-          <button key={e} onClick={() => 클릭된탭변경(e)}   // 해당 버튼이 클릭될 때, '클릭된탭' 값을 해당 active 상태값으로 변경
-          className={`탭버튼 ${클릭된탭 === e ? "활성" : ""}`}>        {/*  ${...} : 문자열 안에 변수나 표현식을 넣을 수 있음. 현재 활성탭이라면 버튼의 class명을 다르게 하는 표현식을 삽입함. => 활성탭의 스타일만 다르게 할 수 있음!*/}
-                                                                   {/* 클릭된탭===e 가 참이라면, :왼쪽 거 실행 => class명 탭버튼 활성  //  거짓이라면, :오른쪽 거 실행 => class명 탭버튼 */} 
-                                                                   {/* class명이 "a b"(띄어쓰기로 연결됨) 이라면 그건 클래스명이 a와 b 두 개인 것!  css에서 '.a.b'라면 두 클래스가 동시에 붙어 있는 요소를 선택하겠다는 뜻입. */}
-            탭 {e + 1}
-          </button>
+      <div className="썸네일목록">
+        {이미지목록.map((e, i)=> (           // .map(e, i) : e는 배열의 객체, i는 인덱스
+          <img key={i} src={e.url} alt={e.제목} className="썸네일 " onClick={()=>선택된이미지변경(i)}/>
         ))}
       </div>
 
-      <div className="탭내용박스">{클릭시표시할내용[클릭된탭]}</div>
+      <div className="확대이미지">
+        <img src={이미지목록[선택된이미지].url} alt={이미지목록[선택된이미지].제목}/>
+        <h3>{이미지목록[선택된이미지].제목}</h3>
+        <p>{이미지목록[선택된이미지].설명}</p>
+      </div>
 
     </div>
   )
