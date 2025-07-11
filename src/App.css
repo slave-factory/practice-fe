@@ -5,15 +5,105 @@
   text-align: center;
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f8fa;
+  padding: 30px;
+}
+
 div {
   box-sizing: border-box;
 }
 
-.날씨카드 {
-  border: 1px solid lightgray;
+div {
+  box-sizing: border-box;
+}
+
+.일기출력칸 {
+  background-color: #fff;
+  padding: 20px;
+  margin: 25px 0;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.일기출력칸 h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.일기출력칸 p {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.일기입력칸 {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.일기입력칸 input {
+  width: 100%;
   padding: 10px;
-  margin: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
+}
+
+.일기입력칸 button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.일기입력칸 button:hover {
+  background-color: #0056b3;
+}
+
+.일기카드박스 {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.일기카드박스 h4 {
+  margin: 0 0 10px 0;
+}
+
+.일기카드박스 button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.일기카드박스 button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+
+.일기카드박스 button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.일기카드박스 button:hover {
+  opacity: 0.85;
 }
 
 .list {
